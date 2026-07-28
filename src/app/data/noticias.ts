@@ -6,6 +6,7 @@ export const noticias = [
     imagen: "/noticias/clasico.jpg",
     categoria: "Liga Catamarqueña",
     fecha: "Hace 2 horas",
+    equiposRelacionados: ["Villa Cubas", "Policial"],
   },
   {
     id: "empate-san-lorenzo-tesorieri",
@@ -14,6 +15,10 @@ export const noticias = [
     imagen: "/noticias/san-lorenzo-tesorieri.jpg",
     categoria: "Liga Catamarqueña",
     fecha: "Hoy",
+    equiposRelacionados: [
+      "San Lorenzo de Alem",
+      "Américo Tesorieri",
+    ],
   },
   {
     id: "obreros-sigue-en-la-pelea",
@@ -22,5 +27,6 @@ export const noticias = [
     imagen: "/noticias/obreros.jpg",
     categoria: "Liga Chacarera",
     fecha: "Ayer",
+    equiposRelacionados: ["Obreros", "Social Rojas"],
   },
 ];
