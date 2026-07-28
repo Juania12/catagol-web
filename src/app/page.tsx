@@ -2,23 +2,24 @@
 
 import { useState } from "react";
 
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import StatsBar from "./components/StatsBar";
-import LeagueTabs from "./components/LeagueTabs";
-import Sidebar from "./components/Sidebar";
-import SearchBar from "./components/SearchBar";
-import MatchCard from "./components/MatchCard";
-import FeaturedMatch from "./components/FeaturedMatch";
-import NextMatchCard from "./components/NextMatchCard";
-import Fixture from "./components/Fixture";
-import Table from "./components/Table";
-import NewsCard from "./components/NewsCard";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Navbar from "./components/layout/Navbar";
+import StatsBar from "./components/table/StatsBar";
+import LeagueTabs from "./components/ui/LeagueTabs";
+import Sidebar from "./components/layout/Sidebar";
+import SearchBar from "./components/ui/SearchBar";
+import MatchCard from "./components/matches/MatchCard";
+import HomeHero from "./components/home/hero/HomeHero";
+import NextMatchCard from "./components/matches/NextMatchCard";
+import Fixture from "./components/matches/Fixture";
+import Table from "./components/table/Table";
+import NewsCard from "./components/news/NewsCard";
+import Footer from "./components/layout/Footer";
+import ResultsBar from "./components/home/ResultsBar";
 
-import { partidos } from "./data/partidos";
-import { proximos } from "./data/proximos";
-import { noticias } from "./data/noticias";
+import { obtenerPartidosPorLiga } from "./lib/obtenerPartidos";
+import { obtenerProximosPorLiga } from "./lib/obtenerProximos";
+import { obtenerNoticias } from "./lib/obtenerNoticias";
 
 export default function Home() {
   const [ligaSeleccionada, setLigaSeleccionada] =
@@ -26,24 +27,26 @@ export default function Home() {
 
   const [busqueda, setBusqueda] = useState("");
 
-  const partidosFiltrados = partidos.filter((partido) => {
-    const coincideLiga = partido.liga === ligaSeleccionada;
-
+  const partidosFiltrados = obtenerPartidosPorLiga(
+    ligaSeleccionada
+  ).filter((partido) => {
     const texto = busqueda.toLowerCase();
 
-    const coincideBusqueda =
+    return (
       partido.local.toLowerCase().includes(texto) ||
-      partido.visitante.toLowerCase().includes(texto);
-
-    return coincideLiga && coincideBusqueda;
+      partido.visitante.toLowerCase().includes(texto)
+    );
   });
 
   return (
     <main className="min-h-screen bg-green-800 text-white">
       <Header />
-      <Navbar />
+<ResultsBar />
+
 
       <section className="max-w-7xl mx-auto p-6">
+
+        <HomeHero />
 
         <StatsBar />
 
@@ -74,36 +77,35 @@ export default function Home() {
               ⚽ {ligaSeleccionada}
             </h2>
 
-            {partidosFiltrados.map((partido) => (
-              <MatchCard
-                key={partido.local + partido.visitante}
-                local={partido.local}
-                visitante={partido.visitante}
-                golesLocal={partido.golesLocal}
-                golesVisitante={partido.golesVisitante}
-                fecha={partido.fecha}
-                estadio={partido.estadio}
-              />
-            ))}
-
-            <FeaturedMatch />
+           {partidosFiltrados.map((partido) => (
+  <MatchCard
+    key={partido.id}
+    id={partido.id}
+    local={partido.local}
+    visitante={partido.visitante}
+    golesLocal={partido.golesLocal}
+    golesVisitante={partido.golesVisitante}
+    fecha={partido.fecha}
+    estadio={partido.estadio}
+  />
+))}
 
             <h2 className="text-3xl font-bold mt-10 mb-5">
               📅 Próximos Partidos
             </h2>
 
-            {proximos
-              .filter((partido) => partido.liga === ligaSeleccionada)
-              .map((partido) => (
-                <NextMatchCard
-                  key={partido.local + partido.visitante}
-                  local={partido.local}
-                  visitante={partido.visitante}
-                  fecha={partido.fecha}
-                  hora={partido.hora}
-                  estadio={partido.estadio}
-                />
-              ))}
+            {partidosFiltrados.map((partido) => (
+  <MatchCard
+    key={partido.id}
+    id={partido.id}
+    local={partido.local}
+    visitante={partido.visitante}
+    golesLocal={partido.golesLocal}
+    golesVisitante={partido.golesVisitante}
+    fecha={partido.fecha}
+    estadio={partido.estadio}
+  />
+))}
 
             <Fixture />
 
@@ -112,7 +114,7 @@ export default function Home() {
             </h2>
 
             <div className="space-y-5">
-              {noticias.map((noticia) => (
+              {obtenerNoticias().map((noticia) => (
                 <NewsCard
                   key={noticia.titulo}
                   titulo={noticia.titulo}
@@ -126,7 +128,7 @@ export default function Home() {
 
           {/* Tabla */}
           <div>
-            <Table />
+            <Table liga={ligaSeleccionada} />
           </div>
 
         </div>
@@ -134,6 +136,7 @@ export default function Home() {
       </section>
 
       <Footer />
+
     </main>
   );
 }

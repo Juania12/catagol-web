@@ -1,4 +1,4 @@
-import { fixture } from "../data/fixture";
+import { fixture } from "../../data/fixture";
 
 export default function Fixture() {
   return (

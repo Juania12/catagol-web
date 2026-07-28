@@ -1,22 +1,33 @@
 export const theme = {
   colors: {
-    background: "#0F172A",
-    card: "#1E293B",
-    border: "#334155",
-    primary: "#22C55E",
-    secondary: "#FACC15",
-    text: "#F8FAFC",
-    muted: "#94A3B8",
-    danger: "#EF4444",
-  },
+    background: "bg-slate-900",
 
-  radius: {
-    sm: "8px",
-    md: "14px",
-    lg: "22px",
-  },
+    card: "bg-slate-800",
 
-  shadow: {
-    card: "0 8px 25px rgba(0,0,0,.25)",
+    border: "border-slate-700",
+
+    text: "text-[#F5F1E8]",
+
+    muted: "text-slate-400",
+
+    gold: "text-[#D6B46A]",
+
+    catamarquena: {
+      bg: "bg-[#3F6B3C]",
+      text: "text-[#3F6B3C]",
+      border: "border-[#3F6B3C]",
+    },
+
+    chacarera: {
+      bg: "bg-[#1E3A5F]",
+      text: "text-[#1E3A5F]",
+      border: "border-[#1E3A5F]",
+    },
+
+    regional: {
+      bg: "bg-[#A65E2E]",
+      text: "text-[#A65E2E]",
+      border: "border-[#A65E2E]",
+    },
   },
 };
