@@ -1,142 +1,30 @@
 # ⚽ CATAGOL MASTERPLAN
 
-> "Todo el fútbol de Catamarca, en un solo lugar."
+> Todo el fútbol de Catamarca, en un solo lugar.
 
 ---
 
-# VISIÓN
+## Visión
 
-CATAGOL nace para convertirse en la plataforma de referencia del fútbol catamarqueño.
+CATAGOL busca convertirse en la plataforma digital de referencia del fútbol catamarqueño.
 
-No buscamos ser una copia de otras páginas deportivas.
-
-Queremos construir una identidad propia, moderna y profesional, pensada desde Catamarca para toda su comunidad futbolera.
+El proyecto debe ofrecer información clara, confiable y actualizada sobre partidos, clubes, ligas y noticias, manteniendo una identidad visual propia.
 
 ---
 
-# MISIÓN
+## Principios
 
-Reunir en un solo lugar:
-
-- Resultados
-- Fixture
-- Posiciones
-- Noticias
-- Clubes
-- Estadísticas
-- Historia
-- Cobertura de los torneos
-
-Con una experiencia rápida, clara y atractiva.
+- Calidad antes que velocidad.
+- No publicar información inventada.
+- Pensar primero en el usuario.
+- Mantener una identidad visual consistente.
+- Diseñar componentes reutilizables.
+- Escribir código ordenado y escalable.
+- Cada funcionalidad debe aportar valor real.
 
 ---
 
-# FILOSOFÍA
+## Estado general
 
-Menos cantidad.
-
-Más calidad.
-
-Cada pantalla debe sentirse cuidada.
-
-Cada detalle debe tener un propósito.
-
----
-
-# PRINCIPIOS
-
-✓ Calidad antes que velocidad.
-
-✓ Pensar siempre en el usuario.
-
-✓ No copiar.
-Inspirarnos para crear algo propio.
-
-✓ Diseñar primero.
-Programar después.
-
-✓ Mantener un código limpio y organizado.
-
----
-
-# IDENTIDAD
-
-Colores oficiales
-
-🟢 Verde oliva
-
-🔵 Azul profundo
-
-🟤 Terracota
-
-🟨 Dorado
-
-⚫ Gris carbón
-
----
-
-# ROADMAP
-
-## Sprint 1
-Arquitectura
-GitHub
-Design System
-Home V2
-
-✅ Completado
-
----
-
-## Sprint 2
-Home Premium
-
-- Hero
-- Centro de la Fecha
-- Sidebar
-- Noticias
-- Footer
-
-🚧 En desarrollo
-
----
-
-## Sprint 3
-Match Center
-
----
-
-## Sprint 4
-Clubes
-
----
-
-## Sprint 5
-Panel de Administración
-
----
-
-## Beta 1.0
-
-Carga completa del campeonato.
-
-Optimización.
-
-Lanzamiento.
-
----
-
-# REGLA MÁS IMPORTANTE
-
-Antes de agregar una función nueva debemos preguntarnos:
-
-"¿Esto mejora realmente CATAGOL?"
-
-Si la respuesta es no...
-
-No se hace.
-
----
-
-# OBJETIVO FINAL
-
-Construir una plataforma de la que cualquier hincha catamarqueño pueda sentirse orgulloso.
+```text
+████████░░ 80%

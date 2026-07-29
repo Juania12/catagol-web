@@ -7,28 +7,27 @@ import { usePathname } from "next/navigation";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 
-const links = [
-  { nombre: "Inicio", href: "/" },
-  { nombre: "Resultados", href: "/resultados" },
+  const links = [
+  { nombre: "Inicio", href: "/v2" },
+  { nombre: "Partidos", href: "/fixture" },
+  { nombre: "Ligas", href: "/ligas" },
   { nombre: "Equipos", href: "/equipos" },
-  { nombre: "Posiciones", href: "/posiciones" },
-  { nombre: "Fixture", href: "/fixture" },
   { nombre: "Noticias", href: "/noticias" },
 ];
+
 
 export default function Header() {
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-700 bg-slate-950/95 backdrop-blur">
-
       <Container>
         <div className="flex min-h-20 items-center justify-between gap-6">
 
           {/* Marca */}
 
           <Link
-            href="/"
+            href="/v2"
             className="flex shrink-0 items-center gap-3"
           >
             <Image
@@ -51,13 +50,13 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Navegación de escritorio */}
+          {/* Navegación escritorio */}
 
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((link) => {
               const activo =
-                link.href === "/"
-                  ? pathname === "/"
+                link.href === "/v2"
+                  ? pathname === "/v2"
                   : pathname.startsWith(link.href);
 
               return (
@@ -79,7 +78,6 @@ export default function Header() {
           {/* Acciones */}
 
           <div className="flex items-center gap-3">
-
             <button
               type="button"
               aria-label="Buscar"
@@ -95,18 +93,16 @@ export default function Header() {
             >
               Mi cuenta
             </Button>
-
           </div>
-
         </div>
 
-        {/* Navegación para celular */}
+        {/* Navegación móvil */}
 
         <nav className="flex gap-2 overflow-x-auto pb-3 lg:hidden">
           {links.map((link) => {
             const activo =
-              link.href === "/"
-                ? pathname === "/"
+              link.href === "/v2"
+                ? pathname === "/v2"
                 : pathname.startsWith(link.href);
 
             return (
@@ -124,13 +120,11 @@ export default function Header() {
             );
           })}
         </nav>
-
       </Container>
 
-      {/* Acento Catamarqueña provisional */}
+      {/* Línea verde */}
 
       <div className="h-1 bg-[#3F6B3C]" />
-
     </header>
   );
 }
