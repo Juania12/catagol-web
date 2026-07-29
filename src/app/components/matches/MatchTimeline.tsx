@@ -69,7 +69,7 @@ export default function MatchTimeline({
 
                 {incidencia.minuto !== null && (
                   <span className="rounded-full bg-[#D6B46A] px-3 py-1 text-xs font-black text-[#142318]">
-                    {incidencia.minuto}'
+                    {incidencia.minuto}&apos;
                   </span>
                 )}
 

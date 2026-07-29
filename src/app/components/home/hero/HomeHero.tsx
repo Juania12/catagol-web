@@ -6,10 +6,12 @@ import { partidos } from "../../../data/partidos";
 import { obtenerEquipoPorNombre } from "../../../lib/obtenerEquipos";
 
 export default function HomeHero() {
-  if (heroPrincipal.tipo === "partido") {
-    const partido = partidos.find(
-      (item) => item.id === heroPrincipal.partidoId
-    );
+ if (heroPrincipal.tipo === "partido") {
+  const partidoId = heroPrincipal.partidoId;
+
+  const partido = partidos.find(
+    (item) => item.id === partidoId
+  );
 
     if (!partido) return null;
 

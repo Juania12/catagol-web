@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { calcularTabla } from "../../lib/calcularTabla";
-import { equipos } from "../../data/equipos";
+import {
+  obtenerEquipoPorNombre,
+} from "../../lib/obtenerEquipos";
 
 type Props = {
   liga: string;
@@ -8,8 +10,7 @@ type Props = {
 
 export default function Table({ liga }: Props) {
   const tabla = calcularTabla(liga);
-  console.log("Liga:", liga);
-console.log("Tabla:", tabla);
+  
 return (
     <div className="bg-white text-black rounded-2xl shadow-xl p-5">
       <h2 className="text-2xl font-bold text-center mb-5">
@@ -29,10 +30,9 @@ return (
 
         <tbody>
           {tabla.map((equipo, index) => {
-            const datosEquipo =
-              equipos[equipo.equipo as keyof typeof equipos];
+            const datosEquipo = obtenerEquipoPorNombre(equipo.equipo);
 
-            if (!datosEquipo) return null;
+if (!datosEquipo) return null;
 
             return (
               <tr

@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 import Header from "./components/layout/Header";
-import Navbar from "./components/layout/Navbar";
+
 import StatsBar from "./components/table/StatsBar";
 import LeagueTabs from "./components/ui/LeagueTabs";
 import Sidebar from "./components/layout/Sidebar";
 import SearchBar from "./components/ui/SearchBar";
 import MatchCard from "./components/matches/MatchCard";
 import HomeHero from "./components/home/hero/HomeHero";
-import NextMatchCard from "./components/matches/NextMatchCard";
+
 import Fixture from "./components/matches/Fixture";
 import Table from "./components/table/Table";
 import NewsCard from "./components/news/NewsCard";
@@ -18,7 +18,7 @@ import Footer from "./components/layout/Footer";
 import ResultsBar from "./components/home/ResultsBar";
 
 import { obtenerPartidosPorLiga } from "./lib/obtenerPartidos";
-import { obtenerProximosPorLiga } from "./lib/obtenerProximos";
+
 import { obtenerNoticias } from "./lib/obtenerNoticias";
 
 export default function Home() {
